@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+// 2-pointer approach
+void reverseArray(int arr[], int n)
+{
+    int left = 0, right = n - 1;
+    while (left < right)
+    {
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+    }
+}
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    reverseArray(arr, size);
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
